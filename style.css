@@ -66,6 +66,7 @@ section {
 
     border-radius: 50px;
     text-align: center;
+    align-self: center;
     padding: 40px;
     margin-block: 100px;
 }
@@ -92,8 +93,9 @@ header {
     font-style: italic;
     display: grid;
     text-align: center;
+    align-self: center;
 
-    font: normal 10pt arial;
+    font: normal 20pt arial;
     flex-wrap: wrap;
 }
 
@@ -117,5 +119,5 @@ h2 {
 }
 
 footer{
-    font: normal 10pt arial;
+    font: normal 15pt arial;
 }
