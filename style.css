@@ -17,7 +17,7 @@ body {
     background-position: center center;
     color: rgb(255, 193, 247);
 
-    padding: 50px;
+    padding: 40px;
 
     display: grid;
     justify-content: center;
@@ -65,7 +65,7 @@ section {
 
     border-radius: 50px;
     text-align: center;
-    padding: 50px;
+    padding: 40px;
     margin-block: 100px;
 }
 
@@ -88,29 +88,27 @@ header {
     /*A cor primária do texto some mostrando o fundo*/
     -webkit-text-fill-color: transparent;
 
-
-
     font-style: italic;
     display: grid;
     text-align: center;
 
-    font: normal 20pt arial;
+    font: normal 10pt arial;
     flex-wrap: wrap;
 }
 
 h4 {
-    font: normal 40pt arial;
+    font: normal 30pt arial;
     color: #00ffff77;
 }
 
 h3 {
-    font: italic 30pt arial;
-    padding: 20px;
+    font: italic 20pt arial;
+    padding: 10px;
     color: #00ffff77;
 }
 
 h2 {
-    font: normal 80pt arial;
+    font: normal 70pt arial;
     background: linear-gradient(to top, #ff00ff9a, #00ffff9c);
     -webkit-background-clip: text;
     background-clip: text;
@@ -118,5 +116,5 @@ h2 {
 }
 
 footer{
-    font: normal 20pt arial;
+    font: normal 10pt arial;
 }
