@@ -1,65 +1,53 @@
-var horas = new Date().getHours()
-var minutos = new Date().getMinutes()
-var segundos = new Date().getUTCSeconds()
-var semana = new Date().getDay()
-switch (semana) {
-    case 0: semana = ("Domingo"); break
-    case 1: semana = ("Segunda-Feira"); break
-    case 2: semana = ("Teça-Feira"); break
-    case 3: semana = ("Quarta-Feira"); break
-    case 4: semana = ("Quinta-Feira"); break
-    case 5: semana = ("Sexta-Feira"); break
-    case 6: semana = ("Sábado"); break
-}
-
-
-
-var horas = new Date().getHours()
-var minutos = new Date().getMinutes()
-var segundos = new Date().getUTCSeconds()
-var semana = new Date().getDay()
-switch (semana) {
-    case 0: semana = ("Domingo"); break
-    case 1: semana = ("Segunda-Feira"); break
-    case 2: semana = ("Teça-Feira"); break
-    case 3: semana = ("Quarta-Feira"); break
-    case 4: semana = ("Quinta-Feira"); break
-    case 5: semana = ("Sexta-Feira"); break
-    case 6: semana = ("Sábado"); break
-}
-
-
-
-function período() {
-    var img = document.getElementById("fotos");
-    var relógio = document.getElementById("relógio");
-    var msg = document.getElementById("msg");
-    var dia = document.getElementById("dia")
-
+function formatarNumero(numero) {
+    return numero.toString().padStart(2, '0');
+  }
+  
+  function atualizarRelógio() {
     var horas = new Date().getHours();
     var minutos = new Date().getMinutes();
-
-    relógio.innerHTML = `<h2><strong>${horas}:${minutos}</strong><h2>`;
-
-    dia.innerHTML = (`<h3><strong>${semana}</strong></h3>`)
-
+    var segundos = new Date().getUTCSeconds();
+    var semana = new Date().getDay();
+  
+    switch (semana) {
+      case 0: semana = "Domingo"; break;
+      case 1: semana = "Segunda-Feira"; break;
+      case 2: semana = "Terça-Feira"; break;
+      case 3: semana = "Quarta-Feira"; break;
+      case 4: semana = "Quinta-Feira"; break;
+      case 5: semana = "Sexta-Feira"; break;
+      case 6: semana = "Sábado"; break;
+    }
+  
+    var relógio = formatarNumero(horas) + ':' + formatarNumero(minutos) + ':' + formatarNumero(segundos);
+    var diaSemana = semana;
+  
+    var relógioElement = document.getElementById("relógio");
+    var diaElement = document.getElementById("dia");
+  
+    relógioElement.innerHTML = `<h2><strong>${relógio}</strong></h2>`;
+    diaElement.innerHTML = `<h3><strong>${diaSemana}</strong></h3>`;
+  
     const imagensDeFundo = {
-        madrugada: 'madrugada',
-        manhã: 'manhã',
-        tarde: 'tarde',
-        noite: 'noite'
+      madrugada: 'madrugada',
+      manhã: 'manhã',
+      tarde: 'tarde',
+      noite: 'noite'
     };
-
+  
     const períodoDoDia = horas < 7 ? { mensagem: "BOA MADRUGADA!", fundo: imagensDeFundo.madrugada }
-        : horas < 12 ? { mensagem: "BOM DIA!", fundo: imagensDeFundo.manhã }
-            : horas < 18 ? { mensagem: "BOA TARDE!", fundo: imagensDeFundo.tarde }
-                : { mensagem: "BOA NOITE!", fundo: imagensDeFundo.noite };
-
-    msg.innerHTML = `<h4><strong>${períodoDoDia.mensagem}</strong></h4>`;
-    img.className = períodoDoDia.fundo;
-}
-
-período();
+      : horas < 12 ? { mensagem: "BOM DIA!", fundo: imagensDeFundo.manhã }
+        : horas < 18 ? { mensagem: "BOA TARDE!", fundo: imagensDeFundo.tarde }
+          : { mensagem: "BOA NOITE!", fundo: imagensDeFundo.noite };
+  
+    var msgElement = document.getElementById("msg");
+    var imgElement = document.getElementById("fotos");
+  
+    msgElement.innerHTML = `<h4><strong>${períodoDoDia.mensagem}</strong></h4>`;
+    imgElement.className = períodoDoDia.fundo;
+  }
+  
+  atualizarRelógio();
+  setInterval(atualizarRelógio, 1000);
 
 
 const card = document.getElementById('section');

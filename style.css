@@ -94,23 +94,23 @@ header {
     display: grid;
     text-align: center;
 
-    font: normal 10pt arial;
+    font: normal 20pt arial;
     flex-wrap: wrap;
 }
 
 h4 {
-    font: normal 30pt arial;
+    font: normal 40pt arial;
     color: #00ffff77;
 }
 
 h3 {
-    font: italic 20pt arial;
+    font: italic 30pt arial;
     padding: 20px;
-    color: #ff00ff85;
+    color: #00ffff77;
 }
 
 h2 {
-    font: normal 90pt arial;
+    font: normal 80pt arial;
     background: linear-gradient(to top, #ff00ff9a, #00ffff9c);
     -webkit-background-clip: text;
     background-clip: text;
@@ -118,5 +118,5 @@ h2 {
 }
 
 footer{
-    font: normal 10pt arial;
+    font: normal 20pt arial;
 }
