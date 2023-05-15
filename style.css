@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+    justify-content: center;
+
+}
+
+/* Efeito degradê na página*/
+body {
+
+    background: linear-gradient(to top, #442444, #1e4949);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    color: rgb(255, 193, 247);
+
+    padding: 50px;
+
+    display: grid;
+    justify-content: center;
+}
+
+.madrugada::before {
+    background-image: url('./img/fundo-madrugada.png');
+}
+
+.manhã::before {
+    background-image: url('./img/fundo-manhã.png');
+}
+
+.tarde::before {
+    background-image: url('./img/fundo-tarde.png');
+}
+
+.noite::before {
+    background-image: url('./img/fundo-noite.png');
+}
+
+#fotos::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    opacity: .3;
+    z-index: -1;
+}
+
+section {
+    width: 100%;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+
+    box-shadow: 20px 20px 50px #07070767;
+    border-top: 2px solid #a5f1ff34;
+    border-left: 2px solid #a5f1ff34;
+    background-color: #223c4227;
+
+    border-radius: 50px;
+    text-align: center;
+    padding: 50px;
+    margin-block: 100px;
+}
+
+/* Estilo do círculo brilhante */
+.circle {
+    position: absolute;
+    border-radius: 100%;
+    box-shadow: 0 0 150px 150px rgba(184, 255, 253, 0.164);
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+/* Efeito degradê no título */
+header {
+    background: linear-gradient(to right, #ff00ff, #00ffff);
+    /*método degradê*/
+    -webkit-background-clip: text;
+    /*o fundo recorta envolta do texto*/
+    background-clip: text;
+    /*A cor primária do texto some mostrando o fundo*/
+    -webkit-text-fill-color: transparent;
+
+
+
+    font-style: italic;
+    display: grid;
+    text-align: center;
+
+    font: normal 20pt arial;
+    flex-wrap: wrap;
+}
+
+h4 {
+    font: normal 40pt arial;
+    color: #00ffff77;
+}
+
+h3 {
+    font: italic 30pt arial;
+    padding: 20px;
+    color: #ff00ff85;
+}
+
+h2 {
+    font: normal 100pt arial;
+    background: linear-gradient(to top, #ff00ff9a, #00ffff9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+footer{
+    font: normal 20pt arial;
+}
